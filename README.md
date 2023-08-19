@@ -8,6 +8,7 @@
 <p align="left">az aks install-cli</p>
 <p align="left">az aks get-credentials -g $RG --name aks-gitops-project</p>
 
+# ---------Install ArgoCD---------
 <p align="left">kubectl get nodes</p>
 <p align="left">kubectl create namespace argocd</p>
 <p align="left">kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml</p>
