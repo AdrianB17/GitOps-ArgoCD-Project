@@ -1,32 +1,32 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodejs-app
+  name: azure-demo-repo
 spec:
   type: LoadBalancer
   ports:
-  - port: 4000
+  - port: 80
     targetPort: 8080
   selector:
-    app: nodejs-app
+    app: azure-demo-repo
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-app
+  name: azure-demo-repo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs-app
+      app: azure-demo-repo
   template:
     metadata:
       labels:
-        app: nodejs-app
+        app: azure-demo-repo
     spec:
       containers:
-      - name: nodejs-app
-        image: adrianb17/nodejs-app:latest
+      - name: azure-demo-repo
+        image: adrianb17/azure-demo-repo:latest
         ports:
         - containerPort: 8080
